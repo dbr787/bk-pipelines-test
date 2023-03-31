@@ -41,4 +41,5 @@ REMOTE_PIPELINE_FILE="$PIPELINE_URL/tree/$PIPELINE_REF/pipelines/$PIPELINE_DIR/p
 
 echo -e "Pipeline: $REMOTE_PIPELINE_FILE  \nPipeline URL: $PIPELINE_URL  \nPipeline REF: \`$PIPELINE_REF\`" | buildkite-agent annotate --style 'info' --context 'ctx-more2'
 
-buildkite-agent pipeline upload $PIPELINE_FILE
+# buildkite-agent pipeline upload $PIPELINE_FILE
+buildkite-agent pipeline upload $LOCAL_PIPELINE_PATH
