@@ -23,7 +23,7 @@ REMOTE_PIPELINE_FILE="$PIPELINE_URL/tree/$PIPELINE_REF/pipelines/$PIPELINE_ORG_R
 echo "REMOTE_PIPELINE_FILE is $REMOTE_PIPELINE_FILE"
 
 # Create annotation
-echo -e "Pipeline Definition [here]('$REMOTE_PIPELINE_FILE') or [here](\"$REMOTE_PIPELINE_FILE\") or [here]($REMOTE_PIPELINE_FILE) : $REMOTE_PIPELINE_FILE  \nPipeline URL: $PIPELINE_URL  \nPipeline REF: \`$PIPELINE_REF\`" | buildkite-agent annotate --style 'info' --context 'ctx-more2'
+echo -e "This [pipeline definition]($REMOTE_PIPELINE_FILE) is managed by the Platform Team.  \nFor further information see the [README]() or contact us [here]()." | buildkite-agent annotate --style 'info' --context 'ctx-remote-pipeline-definition'
 
 # Upload pipeline
 buildkite-agent pipeline upload $LOCAL_PIPELINE_PATH
