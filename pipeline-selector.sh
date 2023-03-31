@@ -14,6 +14,6 @@ FULL_PIPELINE_DIR="./pipelines/$PIPELINE_DIR"
 PIPELINE_FILE="$FULL_PIPELINE_DIR/pipeline.yaml"
 # echo "PIPELINE_FILE is $PIPELINE_FILE"
 
-buildkite-agent annotate "Pipeline uploaded from central repository: $BUILDKITE_REPO"
+buildkite-agent annotate "Pipeline uploaded from central repository: $BUILDKITE_REPO" --style 'info' --context 'ctx-pipeline-selector'
 
 buildkite-agent pipeline upload $PIPELINE_FILE
