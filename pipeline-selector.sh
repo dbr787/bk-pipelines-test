@@ -14,6 +14,10 @@ ls -l $FULL_PIPELINE_DIR
 PIPELINE_FILE="$FULL_PIPELINE_DIR/pipeline.yaml"
 echo "PIPELINE_FILE is $PIPELINE_FILE"
 
+echo "$BUILDKITE_PLUGINS"
+
+echo "$BUILDKITE_PLUGINS" | jq
+
 buildkite-agent annotate "Pipeline definition uploaded from our central repository: $BUILDKITE_REPO" --style 'info' --context 'ctx-pipeline-selector'
 
 buildkite-agent pipeline upload $PIPELINE_FILE
