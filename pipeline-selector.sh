@@ -13,4 +13,5 @@ echo "FULL_PIPELINE_DIR is $FULL_PIPELINE_DIR"
 ls -l $FULL_PIPELINE_DIR
 PIPELINE_FILE="$FULL_PIPELINE_DIR/pipeline.yaml"
 echo "PIPELINE_FILE is $PIPELINE_FILE"
-# buildkite-agent pipeline upload pipeline.yaml
+
+buildkite-agent pipeline upload pipeline.yaml
