@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# TODO
+# Error handling and instructions when no project dir or pipeline is found in the control repository
+
 # Get project repository
 PIPELINE_FILENAME='pipeline.yaml'
 PIPELINE_ORG_REPO=$(echo "$BUILDKITE_REPO" | cut -d / -f 4- | sed 's/\.git$//')
