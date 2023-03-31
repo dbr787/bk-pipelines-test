@@ -25,7 +25,11 @@ echo $PIPELINE_URL
 echo $PIPELINE_REF
 
 buildkite-agent annotate "Pipeline definition uploaded from our central repository: $PIPELINE_URL" --style 'info' --context 'ctx-pipeline-selector'
-buildkite-agent annotate "Pipeline URL: $PIPELINE_URL\n" --style 'info' --context 'ctx-more'
-buildkite-agent annotate "Pipeline REF: $PIPELINE_REF" --style 'info' --context 'ctx-more' --append
+# buildkite-agent annotate "Pipeline URL: $PIPELINE_URL\n" --style 'info' --context 'ctx-more'
+# buildkite-agent annotate "Pipeline REF: $PIPELINE_REF" --style 'info' --context 'ctx-more' --append
+
+echo -e "Pipeline URL: $PIPELINE_URL\nPipeline REF: $PIPELINE_REF" | buildkite-agent annotate --style 'info' --context 'ctx-more'
+
+
 
 buildkite-agent pipeline upload $PIPELINE_FILE
