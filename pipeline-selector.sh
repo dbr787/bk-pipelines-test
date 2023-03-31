@@ -26,5 +26,6 @@ PIPELINE_REPO_CUT=$(echo "$PIPELINE_REPO" | sed 's/.git//')
 # .[] | with_entries( select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))
 
 buildkite-agent annotate "Pipeline definition uploaded from our central repository: $BUILDKITE_REPO" --style 'info' --context 'ctx-pipeline-selector'
+buildkite-agent annotate " $PIPELINE_REPO_CUT" --style 'info' --context 'ctx-more'
 
 buildkite-agent pipeline upload $PIPELINE_FILE
