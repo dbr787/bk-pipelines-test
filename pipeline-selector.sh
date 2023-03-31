@@ -6,7 +6,7 @@ set -euo pipefail
 # ls -la ./pipelines
 # echo "BUILDKITE_REPO is $BUILDKITE_REPO"
 # echo "$BUILDKITE_REPO" | sed 's|.*/||'
-PIPELINE_DIR=$(echo "$BUILDKITE_REPO" | cut -d / -f 4- | sed 's/.git//')
+PIPELINE_DIR=$(echo "$BUILDKITE_REPO" | cut -d / -f 4- | sed 's/\.git//')
 # echo "PIPELINE_DIR is $PIPELINE_DIR"
 FULL_PIPELINE_DIR="./pipelines/$PIPELINE_DIR"
 # echo "FULL_PIPELINE_DIR is $FULL_PIPELINE_DIR"
@@ -21,7 +21,7 @@ echo "$BUILDKITE_PLUGINS" | jq -r '.[] | with_entries(select(.key|contains("hasu
 PIPELINE_REPO=$(echo "$BUILDKITE_PLUGINS" | jq -r '.[] | with_entries(select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))[].repos[].config[].url')
 echo $PIPELINE_REPO
 
-PIPELINE_REPO_CUT=$(echo "$PIPELINE_REPO" | sed 's/.git//')
+PIPELINE_REPO_CUT=$(echo "$PIPELINE_REPO" | sed 's/\.git//')
 
 # .[] | with_entries( select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))
 
