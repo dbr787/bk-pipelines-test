@@ -28,8 +28,8 @@ buildkite-agent annotate "Pipeline\ndefinition\\nuploaded\\\nfrom our central re
 # buildkite-agent annotate "Pipeline URL: $PIPELINE_URL\n" --style 'info' --context 'ctx-more'
 # buildkite-agent annotate "Pipeline REF: $PIPELINE_REF" --style 'info' --context 'ctx-more' --append
 
-echo -e "ekho e Pipeline\\nURL: $PIPELINE_URL\nPipeline\\\nREF: $PIPELINE_REF  \n 1  \\n 2  \\\n 3" | buildkite-agent annotate --style 'info' --context 'ctx-more1'
-printf "printf Pipeline\\nURL: $PIPELINE_URL\nPipeline\\\nREF: $PIPELINE_REF  \n 1  \\n 2  \\\n 3" | buildkite-agent annotate --style 'info' --context 'ctx-more2'
+echo -e "Pipeline URL: $PIPELINE_URL  \nPipeline REF: $PIPELINE_REF" | buildkite-agent annotate --style 'info' --context 'ctx-more1'
+# printf "printf Pipeline\\nURL: $PIPELINE_URL\nPipeline\\\nREF: $PIPELINE_REF  \n 1  \\n 2  \\\n 3" | buildkite-agent annotate --style 'info' --context 'ctx-more2'
 
 
 
