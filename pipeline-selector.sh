@@ -4,12 +4,11 @@ set -euo pipefail
 
 PIPELINE_FILENAME='pipeline.yaml'
 PIPELINE_ORG_REPO=$(echo "$BUILDKITE_REPO" | cut -d / -f 4- | sed 's/\.git$//')
-
-# LOCAL_PIPELINE_FILENAME=
+LOCAL_PIPELINE_PATH="./pipelines/$PIPELINE_ORG_REPO/$PIPELINE_FILENAME"
 
 echo $PIPELINE_ORG_REPO
 echo $PIPELINE_FILENAME
-
+echo $LOCAL_PIPELINE_PATH
 
 
 # ls -la
