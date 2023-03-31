@@ -1,5 +1,0 @@
-steps:
-  - commands:
-    - echo "P2-S1"
-    - echo "P2-S2"
-    - echo "P2-S3"
