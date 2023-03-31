@@ -15,7 +15,13 @@ PIPELINE_FILE="$FULL_PIPELINE_DIR/pipeline.yaml"
 # echo "PIPELINE_FILE is $PIPELINE_FILE"
 
 # echo "$BUILDKITE_PLUGINS" | jq '.'
+
 echo "$BUILDKITE_PLUGINS" | jq -r '.[] | with_entries(select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))[].repos[].config[].url'
+
+PIPELINE_REPO=$(echo "$BUILDKITE_PLUGINS" | jq -r '.[] | with_entries(select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))[].repos[].config[].url')
+echo $PIPELINE_REPO
+
+PIPELINE_REPO_CUT=$(echo "$PIPELINE_REPO" | sed 's/.git//')
 
 # .[] | with_entries( select(.key|contains("hasura/smooth-checkout-buildkite-plugin")))
 
