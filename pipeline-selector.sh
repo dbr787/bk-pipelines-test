@@ -3,7 +3,7 @@
 set -euo pipefail
 
 PIPELINE_FILENAME='pipeline.yaml'
-PIPELINE_DIRNAME=$(echo "$BUILDKITE_REPO" | cut -d / -f 4- | sed 's/\.git$//')
+PIPELINE_DIRNAME=$(echo "$BUILDKITE_REPO" | cut -d / -f 3- | sed 's/\.git$//')
 
 # LOCAL_PIPELINE_FILENAME=
 
